@@ -89,7 +89,11 @@ public class MainActivity extends AppCompatActivity {
             // TODO: 2018/3/22 解决粘包、分包等
             String hexStr = ByteUtil.bytes2HexStr(received, 0, size);
             //LogManager.instance().post(new RecvMessage(hexStr));
-            Log.i("Message", "MSG: " + new RecvMessage(hexStr));
+            String cadence = hexStr.substring(hexStr.length() - 2);
+            int temp1 = Integer.parseInt(cadence, 16 );
+
+            Log.i("Message", "MSG: " +  "" + temp1);
+
         }
 
         /**
